@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ds.metrocabs.model.transaction.BookingRecord" table="metrocabs_book" schema="metrocabs">
+<id name="bookingid" >
+<generator class="increment"></generator>
+</id>
+<property name="date_of_journey"></property>
+<property name="distance"></property>
+<property name="no_of_passengers"></property>
+<property name="driver_flag"></property>
+<property name="confirm_flag"></property>
+<!-- all are foreign keys -->
+<many-to-one name="source" class="com.ds.metrocabs.model.place.Location"></many-to-one>
+<many-to-one name="destination" class="com.ds.metrocabs.model.place.Location"></many-to-one>
+<many-to-one name="user" class="com.ds.metrocabs.model.usermodel.User"></many-to-one>
+<many-to-one name="car" class="com.ds.metrocabs.model.vehicle.Car"></many-to-one>
+<many-to-one name="timesheet" class="com.ds.metrocabs.model.transaction.Timesheet"></many-to-one>
+</class>
+</hibernate-mapping>

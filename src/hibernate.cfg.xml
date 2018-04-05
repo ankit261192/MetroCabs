@@ -1,0 +1,49 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+<property name="connection.url">jdbc:mysql://localhost:3306/metrocabs</property>
+<property name="connection.username">root</property>
+<property name="connection.password">root</property>
+<property name="connection.poolsize">10</property>
+<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+<property name="hbm2ddl.auto">create</property>
+<property name="show_sql">true</property>
+<!-- properties for second level cache -->
+<!-- 
+<property name="cache.use_second_level_cache">true</property>
+<property name="cache.region.factory_class">org.hibernate.cache.EhCacheRegionFactory</property>
+<property name="net.sf.ehcache.configurationResourceName">Resource/ehcache.cfg.xml</property>
+ -->
+<property name="format_sql">true</property>
+<!-- mapping for paymentmodel -->
+<mapping resource="com/ds/metrocabs/resources/mapping/paymentmodel/coupon.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/paymentmodel/demanddraft.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/paymentmodel/drivercharges.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/paymentmodel/insurance.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/paymentmodel/insurancetype.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/paymentmodel/payment.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/paymentmodel/paymenttype.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/paymentmodel/vehiclecharges.hbm.xml"/>
+<!-- mapping for placemodel -->
+<mapping resource="com/ds/metrocabs/resources/mapping/placemodel/branch.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/placemodel/location.hbm.xml"/>
+<!-- mapping for transactionmodel -->
+<mapping resource="com/ds/metrocabs/resources/mapping/transactionmodel/bookrecord.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/transactionmodel/carforsale.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/transactionmodel/carselling.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/transactionmodel/confirmation.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/transactionmodel/timesheet.hbm.xml"/>
+<!-- mapping for usermodel -->
+<mapping resource="com/ds/metrocabs/resources/mapping/usermodel/address.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/usermodel/users.hbm.xml"/>
+<!-- mapping for vehiclemodel -->
+<mapping resource="com/ds/metrocabs/resources/mapping/vehiclemodel/car.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/vehiclemodel/cartype.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/vehiclemodel/fuelreading.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/vehiclemodel/fueltype.hbm.xml"/>
+<mapping resource="com/ds/metrocabs/resources/mapping/vehiclemodel/speedometerreading.hbm.xml"/>
+</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ds.metrocabs.model.vehicle.Car" table="metrocabs_car" schema="metrocabs">
+<id name="car_id">
+<generator class="increment"></generator>
+</id>
+<property name="car_name"></property>
+<property name="reg_no"></property>
+<property name="date_of_added"></property>
+<property name="model_year"></property>
+<property name="availability_flag"></property>
+<many-to-one name="car_type" class="com.ds.metrocabs.model.vehicle.CarType">
+<column name="car_typ_id"></column>
+</many-to-one>
+<many-to-one name="fuel_type" class="com.ds.metrocabs.model.vehicle.FuelType">
+<column name="fuel_typ_id"></column>
+</many-to-one>
+<many-to-one name="branch" class="com.ds.metrocabs.model.place.Branch">
+<column name="branchid"></column>
+</many-to-one>
+</class>
+</hibernate-mapping>

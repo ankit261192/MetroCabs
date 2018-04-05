@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ds.metrocabs.model.payment.DemandDraft" table="metrocabs_dd" schema="metrocabs">
+<!-- taking ddnumber and bankname together as constraint -->
+<composite-id>
+<key-property name="dd_number"></key-property>
+<key-property name="bank_name"></key-property>
+</composite-id>
+<property name="branch_name"></property>
+<property name="amount"></property>
+<property name="deposit_date"></property>
+<property name="expire_date"></property>
+<many-to-one name="payment" class="com.ds.metrocabs.model.payment.Payment">
+<column name="payment_id"></column>
+</many-to-one>
+</class>
+</hibernate-mapping>

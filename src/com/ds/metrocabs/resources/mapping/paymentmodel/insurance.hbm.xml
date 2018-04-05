@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ds.metrocabs.model.payment.Insurance" table="metrocabs_insurance" schema="metrocabs">
+<id name="insurance_id">
+<generator class="increment"></generator>
+</id>
+<many-to-one name="car" class="com.ds.metrocabs.model.vehicle.Car">
+<column name="carid"></column>
+</many-to-one>
+<property name="company_name"></property>
+<property name="amount"></property>
+<property name="date_of_insurance"></property>
+<property name="renewal_date"></property>
+<property name="version"></property>
+<many-to-one name="insurance_typ" class="com.ds.metrocabs.model.payment.InsuranceType">
+<column name="insurance_typ_id"></column>
+</many-to-one>
+</class>
+</hibernate-mapping>

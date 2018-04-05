@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ds.metrocabs.model.transaction.CarSellingRecord" table="metrocabs_car_sell_rec" schema="metrocabs">
+<id name="car_sale_id">
+<generator class="foreign">
+<param name="property">car_for_sale_record</param>
+</generator>
+</id>
+<property name="date_of_sale"></property>
+<many-to-one name="user" class="com.ds.metrocabs.model.usermodel.User">
+<column name="userid"/>
+</many-to-one>
+<many-to-one name="payment" class="com.ds.metrocabs.model.payment.Payment">
+<column name="payment_id"/>
+</many-to-one>
+<one-to-one name="car_for_sale_record" class="com.ds.metrocabs.model.transaction.CarForSaleRecord"></one-to-one>
+</class>
+</hibernate-mapping>

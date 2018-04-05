@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ds.metrocabs.model.payment.VehicleCharges" table="metrocabs_vehi_ch" schema="metrocabs">
+<id name="vehicle_charge_id">
+<generator class="foreign">
+<param name="property">car_type</param>
+</generator>
+</id>
+<one-to-one name="car_type" class="com.ds.metrocabs.model.vehicle.CarType"></one-to-one>
+<property name="hr_chg_per_day"></property>
+<property name="hr_chg_per_night"></property>
+<property name="day_charge"></property>
+<property name="night_charge"></property>
+<property name="week_charge"></property>
+<property name="month_charge"></property>
+<property name="wait_ch_p_min"></property>
+<property name="extra_per_km"></property>
+</class>
+</hibernate-mapping>

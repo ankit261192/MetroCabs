@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.ds.metrocabs.model.usermodel.User" table="metrocabs_user" schema="metrocabs">
+   <id name="userid">
+   <generator class="increment"></generator>
+   </id>
+   <property name="username"></property>
+    <property name="password"></property>
+     <property name="dob"></property>
+      <property name="gender"></property>
+      <!-- as address has one to many relation and taking userid as foreign key,cascade for parent child record dml operation -->
+      <set name="addresses" cascade="all">
+      <key column="userid"></key>
+      <one-to-many class="com.ds.metrocabs.model.usermodel.Address"/>
+      </set>
+      <!-- as user and employee are parent child -->
+      <joined-subclass name="com.ds.metrocabs.model.usermodel.Employee" table="metrocabs_emp" schema="metrocabs">
+      <!-- parent primary key to be used as primary key for child table -->
+      <key column="userid"></key>
+      <property name="joindate"></property>
+      <property name="role"></property>
+      <!-- many employee can be in a branch -->
+      <many-to-one name="branch" class="com.ds.metrocabs.model.place.Branch">
+      </many-to-one>
+      <joined-subclass name="com.ds.metrocabs.model.usermodel.Driver" table="metrocabs_driver" schema="metrocabs">
+      <key column="userid"></key>
+      <property name="licenseno"></property>  
+      </joined-subclass>
+      </joined-subclass>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ds.metrocabs.model.payment.DriverCharges" table="metrocabs_dr_charges" schema="metrocabs">
+<id name="driver_ch_id">
+<generator class="increment"></generator>
+</id>
+<property name="hr_ch_per_day"></property>
+<property name="ch_per_night"></property>
+<property name="ch_per_day"></property>
+<property name="ch_per_week"></property>
+<property name="ch_per_month"></property>
+<property name="wait_ch_per_min"></property>
+</class>
+</hibernate-mapping>

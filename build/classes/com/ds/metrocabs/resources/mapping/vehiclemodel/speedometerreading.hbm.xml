@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ds.metrocabs.model.vehicle.SpeedometerReading" table="metrocabs_speedo_read" schema="metrocabs">
+<id name="speedo_id">
+<generator class="increment"></generator>
+</id>
+<property name="sp_read_date"></property>
+<property name="sp_read_time"></property>
+<property name="Speedo_reading"></property>
+<property name="speedo_version"></property>
+<many-to-one name="car" class="com.ds.metrocabs.model.vehicle.Car">
+<column name="car_id"></column>
+</many-to-one>
+</class>
+</hibernate-mapping>
